@@ -45,22 +45,6 @@ const ProductDetail = () => {
   const handleinfo = () => {
     setreview(false);
   };
-  const zoomIn = () => {
-    const image = document.getElementById("zoomImage");
-    const currentScale = parseFloat(
-      window.getComputedStyle(image).getPropertyValue("transform").split(",")[3]
-    );
-    const newScale = currentScale + 0.1;
-    image.style.transform = `scale(${newScale})`;
-  };
-  const zoomOut = () => {
-    const image = document.getElementById("zoomImage");
-    const currentScale = parseFloat(
-      window.getComputedStyle(image).getPropertyValue("transform").split(",")[3]
-    );
-    const newScale = currentScale - 0.1;
-    image.style.transform = `scale(${newScale})`;
-  };
   return (
     // this is the parent div for the product details
     // adjust the padding and margin for the parent div according to you
@@ -79,22 +63,16 @@ const ProductDetail = () => {
           />
 
           {/* Wishlist Button */}
-          <button className="absolute bottom-2 left-2 bg-transparent hover:bg-[#cf2e2e] text-[#c0c0c0] hover:text-white px-3 py-3 rounded-full">
+          <button className="absolute bottom-2 left-2 bg-transparent hover:bg-[#cf2e2e] text-white px-3 py-3 rounded-full">
             <FaHeart /> {/* React Icons heart icon */}
           </button>
 
           {/* Zoom Buttons */}
           <div className="absolute bottom-2 right-2 flex space-x-2">
-            <button
-              className="bg-transparent hover:bg-[#cba753] text-[#c0c0c0] hover:text-white px-3 py-3 rounded-full"
-              onClick={zoomIn}
-            >
+            <button className="bg-transparent hover:bg-[#cba753] text-white px-3 py-3 rounded-full">
               <FaSearchPlus /> {/* React Icons zoom-in icon */}
             </button>
-            <button
-              className="bg-transparent hover:bg-[#cba753] text-[#c0c0c0] hover:text-white px-3 py-3 rounded-full"
-              onClick={zoomOut}
-            >
+            <button className="bg-transparent hover:bg-[#cba753] text-white px-3 py-3 rounded-full">
               <FaSearchMinus /> {/* React Icons zoom-out icon */}
             </button>
           </div>
