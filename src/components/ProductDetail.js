@@ -45,6 +45,12 @@ const ProductDetail = () => {
   const handleinfo = () => {
     setreview(false);
   };
+  const zoomIn = () => {
+    // write the code for zoom in and out I could not find anything for it
+  };
+  const zoomOut = () => {
+    
+  };
   return (
     // this is the parent div for the product details
     // adjust the padding and margin for the parent div according to you
@@ -56,7 +62,7 @@ const ProductDetail = () => {
         <div className="md:w-1/2 relative">
           {/* Image */}
           <img
-            src="something.jpg"
+            src="download.jpg"
             alt="mainproductimage"
             className="w-full h-auto cursor-pointer"
             id="zoomImage"
@@ -69,10 +75,16 @@ const ProductDetail = () => {
 
           {/* Zoom Buttons */}
           <div className="absolute bottom-2 right-2 flex space-x-2">
-            <button className="bg-transparent hover:bg-[#cba753] text-white px-3 py-3 rounded-full">
+            <button
+              className="bg-transparent hover:bg-[#cba753] text-[#c0c0c0] px-3 py-3 rounded-full"
+              onClick={zoomIn}
+            >
               <FaSearchPlus /> {/* React Icons zoom-in icon */}
             </button>
-            <button className="bg-transparent hover:bg-[#cba753] text-white px-3 py-3 rounded-full">
+            <button
+              className="bg-transparent hover:bg-[#cba753] text-[#c0c0c0] px-3 py-3 rounded-full"
+              onClick={zoomOut}
+            >
               <FaSearchMinus /> {/* React Icons zoom-out icon */}
             </button>
           </div>
@@ -81,7 +93,7 @@ const ProductDetail = () => {
 
         {/* First part right side - start */}
         {/* Parent div for the right side */}
-        <div className="flex flex-col p-7 space-y-3">
+        <div className="flex flex-col p-6 space-y-3 mt-4">
           {/* You can also use react router if this link will land on the same website page */}
           <a href="/" className="text-sm text-[#666666b3] hover:text-[#000000]">
             C. DAKSHINAMOORTHY
