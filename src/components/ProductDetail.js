@@ -1,7 +1,9 @@
 // This is the component for the product details
-// Just run a map function through this for multiple product details
+// Just run a map function through this for multiple product details 
 // use props for multiple items data just replace the values in the tags with your props
-// Change the font family as it may have default family that might look
+// Change the font family as it can have default family that might look different
+// run (npm i) in the project directory before seeing the website
+// everything is responsive in this
 import React, { useState } from "react";
 import {
   AiOutlineHeart,
@@ -11,7 +13,6 @@ import {
   AiOutlineMail,
   AiFillLinkedin,
 } from "react-icons/ai";
-// import { MdZoomOutMap, MdZoomInMap } from "react-icons/md";
 import { BsPinterest } from "react-icons/bs";
 import StarRatings from "react-star-ratings";
 import Carouseldetail from "./Carouseldetail";
@@ -31,7 +32,10 @@ const ProductDetail = () => {
   };
   const handleChange = (event) => {
     const value = event.target.value;
-    setincrement(Number(value));
+    //any numbers above this are considered to be a NAN so I put a limit to the amount
+    if (value < 100000) {
+      setincrement(Number(value));
+    }
   };
   const setWishList = () => {
     setWishlist(!wishlist);
@@ -40,23 +44,22 @@ const ProductDetail = () => {
     setrating(newrating);
   };
   const handlereview = () => {
+    // this is used to navigate between information and review parts
     setreview(true);
   };
   const handleinfo = () => {
+    // this is used to navigate between information and review parts
     setreview(false);
   };
   const zoomIn = () => {
     // write the code for zoom in and out I could not find anything for it
   };
-  const zoomOut = () => {
-    
-  };
+  const zoomOut = () => {};
   return (
     // this is the parent div for the product details
     // adjust the padding and margin for the parent div according to you
     <div className="md:flex justify-center items-center flex-col md:pt-0 md:p-20 md:m-20 p-2 m-2">
       {/* First Part - Product price and detail - Start */}
-      {/* this is the parent div of the First part */}
       <div className="md:flex md:items-center md:justify-evenly w-full">
         {/* First part left side - start */}
         <div className="md:w-1/2 relative">

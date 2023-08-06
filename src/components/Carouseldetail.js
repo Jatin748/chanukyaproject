@@ -1,3 +1,5 @@
+//this is the component for the carousel
+// everything is responsive in here
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -24,7 +26,7 @@ const Carouseldetail = () => {
   return (
     <div>
       <Carousel responsive={responsive} infinite={true}>
-        {/* i have only added one picture here use the map function and loop for multiple items */}
+        {/* I have only added one picture but you can use the map function and loop for multiple items */}
         <div className="flex flex-col space-y-2 m-4">
           <img src="download.jpg" alt="source"></img>
           <span className="uppercase text-xs font-normal text-[#777777] tracking-wider">
